@@ -6,7 +6,7 @@ A Power BI report built from `lego_sets.csv` to analyze LEGO sets by **category*
 
 ## ⬇️ Download
 
-- <a href="./lego.pbix" target="_blank" rel="noopener noreferrer">Download the PBIX</a>
+- <a href="./lego.pbix?raw=1" target="_blank" rel="noopener noreferrer">Download the PBIX (LEGO SET)</a>
 
 ---
 
