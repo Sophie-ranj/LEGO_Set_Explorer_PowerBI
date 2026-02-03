@@ -33,59 +33,6 @@ A Power BI report built from `lego_sets.csv` to analyze LEGO sets by **category*
 
 ---
 
-## DAX (Measures + Interactivity)
-
-```DAX
--- Core KPIs (match your card titles)
-total sets = DISTINCTCOUNT(lego_sets[set_id])
-total groups = DISTINCTCOUNT(lego_sets[themeGroup])
-
-average pieces = AVERAGE(lego_sets[pieces])
-average price = AVERAGE(lego_sets[price])
-avg. age = AVERAGE(lego_sets[age])
-
--- What-if parameter filter (Max Price: 0–850 step 5)
--- Use this as a visual-level filter on the table: Show Under Max Price = 1
-Show Under Max Price =
-VAR MaxP = SELECTEDVALUE('Max Price'[Max Price], 850)
-VAR ThisPrice = SELECTEDVALUE(lego_sets[price])
-RETURN
-IF( NOT ISBLANK(ThisPrice) && ThisPrice <= MaxP, 1, 0 )
-
--- Selected-set details (show placeholders when multiple sets are selected)
-Selected Set Name =
-IF(
-    HASONEVALUE(lego_sets[set_id]),
-    SELECTEDVALUE(lego_sets[name]),
-    "Multiple sets selected"
-)
-
-Selected Price =
-IF( HASONEVALUE(lego_sets[set_id]), SELECTEDVALUE(lego_sets[price]) )
-
-Selected Year =
-IF( HASONEVALUE(lego_sets[set_id]), SELECTEDVALUE(lego_sets[year]) )
-
-Selected Pieces =
-IF( HASONEVALUE(lego_sets[set_id]), SELECTEDVALUE(lego_sets[pieces]) )
-
-Selected Age =
-IF( HASONEVALUE(lego_sets[set_id]), SELECTEDVALUE(lego_sets[age]) )
-
-Selected Image URL =
-IF( HASONEVALUE(lego_sets[set_id]), SELECTEDVALUE(lego_sets[imageURL]) )
-
--- Optional formatted price for a big card
-Selected Price (Formatted) =
-IF(
-    HASONEVALUE(lego_sets[set_id]),
-    FORMAT( SELECTEDVALUE(lego_sets[price]), "$#,0.00" ),
-    "—"
-)
-```
-
----
-
 ## Report Pages & UX
 
 - Page 1: KPI cards + slicers (**themeGroup**, **theme**, **Age Range**, **Max Price**) + table with tooltip image + selected-set detail panel
@@ -99,6 +46,6 @@ IF(
 
 ## Author
 
-**Sophie Ranj** — ranj.sophie@outlook.com  
+**Sophie Ranj** ranj.sophie@outlook.com  
 LinkedIn: <a href="https://linkedin.com/in/sophie-ranj" target="_blank" rel="noopener noreferrer">linkedin.com/in/sophie-ranj</a>  
 Portfolio: <a href="https://sophie-ranj.github.io/" target="_blank" rel="noopener noreferrer">sophie-ranj.github.io</a>
