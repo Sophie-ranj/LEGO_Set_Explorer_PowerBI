@@ -2,11 +2,11 @@
 
 A Power BI report built from `lego_sets.csv` to analyze LEGO sets by **category**, **themeGroup/theme**, **age**, **price**, and **pieces**, with a **Max Price** what-if parameter, image tooltips, bookmarks (reset), and a decomposition tree drill page.
 
-<img src="images/LegoDashboard.png" alt="Dashboard preview" width="800">
+<img src="images/lego 1.png" alt="Dashboard preview" width="800">
 
 ## ⬇️ Download
 
-- <a href="./LEGO%20Sets%20Dashboard.pbix?raw=1" target="_blank" rel="noopener noreferrer">Download the PBIX</a>
+- <a href="./lego.pbix" target="_blank" rel="noopener noreferrer">Download the PBIX</a>
 
 ---
 
@@ -93,7 +93,7 @@ IF(
 - Visual interactions adjusted so **table selections don’t filter** the top KPI cards
 - Page 2: **Decomposition Tree** using `category → themeGroup → theme → name` with navigation buttons
 
-<img src="images/DecompositionTree.png" alt="Decomposition Tree preview" width="800">
+<img src="images/lego 2.png" alt="Decomposition Tree preview" width="800">
 
 ---
 
